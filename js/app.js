@@ -150,18 +150,19 @@
   }
   let sendTimer = null;
   function queueSend() { clearTimeout(sendTimer); sendTimer = setTimeout(sendProgress, 60000); }
-  function sendProgress() {
+  function sendProgress(force) {
     clearTimeout(sendTimer);
     const f = CONFIG.progressForm;
-    if (!f || !f.url || !f.field || !P.welcomed || !navigator.onLine) return;
+    if (!f || !f.url || !f.field || !P.welcomed || !navigator.onLine) return Promise.resolve(false);
     const r = report(), body = JSON.stringify(r);
     const sig = JSON.stringify(Object.assign({}, r, { sent: "" }));
-    if (sig === P.lastSent) return;
+    // skip if nothing changed, unless forced or the last send was over 6 hours ago
+    if (!force && sig === P.lastSent && Date.now() - (P.lastSentAt || 0) < 6 * 3600 * 1000) return Promise.resolve(false);
     try {
-      fetch(f.url, { method: "POST", mode: "no-cors", keepalive: true, body: new URLSearchParams({ [f.field]: body }) })
-        .then(() => { P.lastSent = sig; try { localStorage.setItem(STORE, JSON.stringify(P)); } catch (e) {} })
-        .catch(() => {});
-    } catch (e) {}
+      return fetch(f.url, { method: "POST", mode: "no-cors", keepalive: true, body: new URLSearchParams({ [f.field]: body }) })
+        .then(() => { P.lastSent = sig; P.lastSentAt = Date.now(); try { localStorage.setItem(STORE, JSON.stringify(P)); } catch (e) {} return true; })
+        .catch(() => false);
+    } catch (e) { return Promise.resolve(false); }
   }
   document.addEventListener("visibilitychange", () => { if (document.visibilityState === "hidden") sendProgress(); });
   async function loadContent() {
@@ -872,6 +873,8 @@
         <p class="sub">Then it works like an app, even with no internet.</p></div>
       <div class="card"><span class="label">My progress</span>
         <p class="sub">Saved on this phone. ${WEEKS.length} weeks of lessons.${CONFIG.progressForm && CONFIG.progressForm.url ? ` Your progress is also sent to ${esc(CONFIG.sharedWith || "your teacher")} so he can plan your next lessons.` : ""}</p>
+        ${CONFIG.progressForm && CONFIG.progressForm.url ? `<button class="btn white" id="sendnow">📤 Send my progress now</button>
+        <p class="sub" id="sentinfo">${P.lastSentAt ? "Last sent: " + new Date(P.lastSentAt).toLocaleString("en-GB", { dateStyle: "medium", timeStyle: "short" }) : "Not sent yet"}</p>` : ""}
         <button class="btn red" id="reset">Start again from zero</button>
         <div id="confirm" hidden class="list"><b>Delete all stars, streak and words?</b><div class="grid2"><button class="btn red" id="yes">Yes, delete</button><button class="btn white" id="no">No</button></div></div></div>`;
     $("#accent").value = s.accent; $("#newper").value = s.newPerDay;
@@ -879,6 +882,16 @@
     $("#accent").onchange = e => { s.accent = e.target.value; save(); };
     $("#rate").oninput = e => { s.rate = +e.target.value; $("#rateval").textContent = s.rate; save(); };
     $("#newper").onchange = e => { s.newPerDay = +e.target.value; session = null; save(); };
+    const sn = $("#sendnow");
+    if (sn) sn.onclick = () => {
+      if (!navigator.onLine) { toast("No internet. Try again later"); return; }
+      sn.disabled = true;
+      sendProgress(true).then(ok => {
+        sn.disabled = false;
+        if (ok) { toast("Progress sent ✓"); $("#sentinfo").textContent = "Last sent: " + new Date(P.lastSentAt).toLocaleString("en-GB", { dateStyle: "medium", timeStyle: "short" }); }
+        else toast("Couldn't send. Try again later");
+      });
+    };
     $("#reset").onclick = () => { $("#confirm").hidden = false; };
     $("#no").onclick = () => { $("#confirm").hidden = true; };
     $("#yes").onclick = () => { const keep = { settings: P.settings, name: P.name }; P = Object.assign(defaults(), keep, { welcomed: true }); session = null; save(); toast("Progress deleted"); location.hash = "#home"; };
