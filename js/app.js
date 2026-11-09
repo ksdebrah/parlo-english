@@ -252,6 +252,7 @@
     const hi = h < 12 ? "Good morning" : h < 18 ? "Good afternoon" : "Good evening";
     view.innerHTML = `
       <div class="hello"><span class="wave">👋</span><div><p class="sub">${hi}</p><h1>Hi${P.name ? ", " + esc(P.name) : ""}!</h1></div></div>
+      ${installBanner()}
       <a class="card hero" href="#learn" style="text-decoration:none">
         <span class="big-emoji">${esc(w.emoji || "📘")}</span>
         <span class="label">This week · Week ${w.week}</span>
@@ -277,7 +278,80 @@
         <div class="card center"><span style="font-size:2rem">🔥</span><b style="font-family:var(--display);font-size:1.6rem;line-height:1">${streak()}</b><small class="sub">days in a row</small></div>
         <div class="card center"><span style="font-size:2rem">🧠</span><b style="font-family:var(--display);font-size:1.6rem;line-height:1">${learned()}</b><small class="sub">words learned</small></div>
       </div>`;
+    bindInstall();
   };
+
+  // ---------- install on the home screen ----------
+  let installEvt = null;
+  const ua = navigator.userAgent;
+  const isIOS = /iPhone|iPad|iPod/.test(ua) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+  const isAndroid = /Android/.test(ua);
+  const inAppBrowser = /FBAN|FBAV|Instagram|Snapchat|TikTok|Line\/|WhatsApp|; wv\)/.test(ua);
+  const iosNotSafari = isIOS && /CriOS|FxiOS|EdgiOS|OPiOS/.test(ua);
+  const isInstalled = () => matchMedia("(display-mode: standalone)").matches || navigator.standalone === true;
+  window.addEventListener("beforeinstallprompt", e => {
+    e.preventDefault(); installEvt = e;
+    const b = $("#install-banner"); if (b) { b.outerHTML = installBanner(); bindInstall(); }
+  });
+  window.addEventListener("appinstalled", () => {
+    installEvt = null; P.installed = true; save(); closeSheet();
+    confetti(); toast("Parlo is on your home screen! 🎉");
+    const b = $("#install-banner"); if (b) b.remove();
+  });
+  function installBanner() {
+    if (isInstalled() || P.installed) return "";
+    if (P.installLater && Date.now() < P.installLater) return "";
+    return `<section class="card install" id="install-banner">
+        <div class="row" style="flex-wrap:nowrap;gap:12px"><span class="inst-ic">📲</span>
+          <div><h2>Put Parlo on your phone</h2><p>Open it with one tap, like an app. It works without internet too.</p></div></div>
+        <div class="grid2"><button class="btn white small" id="inst-later">Not now</button><button class="btn small" id="inst-go">${installEvt ? "Install" : "Show me how"}</button></div>
+      </section>`;
+  }
+  function bindInstall() {
+    const go2 = $("#inst-go"), later = $("#inst-later");
+    if (go2) go2.onclick = doInstall;
+    if (later) later.onclick = () => { P.installLater = Date.now() + 3 * 864e5; save(); $("#install-banner").remove(); };
+  }
+  function doInstall() {
+    if (installEvt) {
+      installEvt.prompt();
+      installEvt.userChoice.then(c => { if (c.outcome !== "accepted") toast("No problem. You can install it later in ⚙️ Settings"); installEvt = null; });
+      return;
+    }
+    showInstallHelp();
+  }
+  function closeSheet() { const s = $("#sheet"); if (s) s.remove(); }
+  function showInstallHelp() {
+    let title = "Add Parlo to your home screen", steps;
+    if (isIOS && inAppBrowser) steps = [
+      ["🧭", "Open this page in <b>Safari</b>.", "Tap <b>⋯</b> or the compass, then <b>Open in Safari</b>."],
+      ["⬆️", "Tap the <b>Share</b> button.", "The square with an arrow pointing up."],
+      ["➕", "Tap <b>Add to Home Screen</b>.", "Scroll down a little if you can't see it."],
+      ["✅", "Tap <b>Add</b>.", "Parlo is now on your home screen!"]];
+    else if (isIOS) steps = [
+      ["⬆️", "Tap the <b>Share</b> button.", iosNotSafari ? "In Chrome it's at the top right, next to the address." : "At the bottom of the screen: a square with an arrow pointing up."],
+      ["➕", "Tap <b>Add to Home Screen</b>.", "Scroll down a little if you can't see it."],
+      ["✅", "Tap <b>Add</b>.", "Parlo is now on your home screen!"]];
+    else if (isAndroid) steps = [
+      ["⋮", "Tap the <b>⋮</b> menu.", "Top right of the screen."],
+      ["🌐", "If you see <b>Open in Chrome</b>, tap it first.", "This happens when you open the link from WhatsApp. Then tap ⋮ again."],
+      ["📲", "Tap <b>Install app</b> or <b>Add to Home screen</b>.", ""],
+      ["✅", "Tap <b>Install</b>.", "Parlo is now on your home screen!"]];
+    else { title = "Install Parlo on this computer"; steps = [
+      ["⊕", "Click the <b>install icon</b> in the address bar.", "Or open the browser menu and choose <b>Install Parlo</b>."],
+      ["✅", "Click <b>Install</b>.", ""]]; }
+    closeSheet();
+    const s = document.createElement("div"); s.id = "sheet"; s.className = "sheet";
+    s.innerHTML = `<div class="sheet-card" role="dialog" aria-modal="true" aria-labelledby="sheet-t">
+        <h2 id="sheet-t">${title}</h2>
+        <ol class="isteps">${steps.map(([ic, a, b]) => `<li><span class="ic">${ic}</span><div><span class="t">${a}</span>${b ? `<small>${b}</small>` : ""}</div></li>`).join("")}</ol>
+        <div class="grid2"><button class="btn white" id="sheet-x">Close</button><button class="btn green" id="sheet-done">I did it ✓</button></div>
+      </div>`;
+    document.body.appendChild(s);
+    s.onclick = e => { if (e.target === s) closeSheet(); };
+    $("#sheet-x").onclick = closeSheet;
+    $("#sheet-done").onclick = () => { P.installed = true; save(); closeSheet(); confetti(); toast("Great! Open Parlo from your home screen 🎉"); const b = $("#install-banner"); if (b) b.remove(); };
+  }
 
   // ---------- LEARN ----------
   routes.learn = () => {
@@ -868,9 +942,8 @@
       <div class="card"><label for="newper">New words each day</label>
         <select id="newper">${[5, 8, 10, 15].map(n => `<option value="${n}">${n}</option>`).join("")}</select></div>
       <div class="card"><span class="label">Put Parlo on your phone</span>
-        <p><b>iPhone:</b> tap Share <span aria-hidden="true">⬆️</span> → <b>Add to Home Screen</b>.</p>
-        <p><b>Android:</b> tap ⋮ → <b>Install app</b> or <b>Add to Home screen</b>.</p>
-        <p class="sub">Then it works like an app, even with no internet.</p></div>
+        ${isInstalled() ? `<p>✅ Parlo is installed on this phone.</p>` : `<p class="sub">Open it with one tap, like an app. It works without internet too.</p>
+        <button class="btn" id="inst-settings">📲 ${installEvt ? "Install Parlo" : "Show me how to install"}</button>`}</div>
       <div class="card"><span class="label">My progress</span>
         <p class="sub">Saved on this phone. ${WEEKS.length} weeks of lessons.${CONFIG.progressForm && CONFIG.progressForm.url ? ` Your progress is also sent to ${esc(CONFIG.sharedWith || "your teacher")} so he can plan your next lessons.` : ""}</p>
         ${CONFIG.progressForm && CONFIG.progressForm.url ? `<button class="btn white" id="sendnow">📤 Send my progress now</button>
@@ -882,6 +955,8 @@
     $("#accent").onchange = e => { s.accent = e.target.value; save(); };
     $("#rate").oninput = e => { s.rate = +e.target.value; $("#rateval").textContent = s.rate; save(); };
     $("#newper").onchange = e => { s.newPerDay = +e.target.value; session = null; save(); };
+    const is = $("#inst-settings");
+    if (is) is.onclick = doInstall;
     const sn = $("#sendnow");
     if (sn) sn.onclick = () => {
       if (!navigator.onLine) { toast("No internet. Try again later"); return; }

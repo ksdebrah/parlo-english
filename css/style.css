@@ -192,6 +192,22 @@ ul.tips{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:4px}
 .how div{display:flex;gap:12px;align-items:center;font-weight:700}
 .how span{font-size:1.6rem;width:48px;height:48px;border-radius:14px;display:grid;place-items:center;flex:none}
 
+/* install */
+.install{background:var(--yellow-l);border-color:var(--yellow);box-shadow:0 5px 0 var(--yellow)}
+.install .inst-ic{font-size:2.4rem;flex:none;line-height:1}
+.install p{font-size:.95rem;color:#5B4100}
+.sheet{position:fixed;inset:0;z-index:30;background:rgba(27,37,89,.45);display:flex;align-items:flex-end;justify-content:center;animation:fade .2s}
+.sheet-card{background:#fff;width:100%;max-width:600px;border-radius:28px 28px 0 0;display:flex;flex-direction:column;gap:16px;
+  padding:22px max(18px,env(safe-area-inset-right,0px)) calc(22px + env(safe-area-inset-bottom,0px)) max(18px,env(safe-area-inset-left,0px));animation:up .25s ease-out}
+.isteps{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;counter-reset:s}
+.isteps li{display:flex;gap:12px;align-items:center}
+.isteps .ic{flex:none;width:52px;height:52px;border-radius:16px;background:var(--blue-l);display:grid;place-items:center;font-size:1.6rem;font-weight:800;color:var(--blue)}
+.isteps .t{display:block;font-size:1.05rem;font-weight:700}
+.isteps .t b{font-weight:800;color:var(--blue)}
+.isteps small{display:block;color:var(--muted);font-weight:600}
+@keyframes fade{from{opacity:0}}
+@keyframes up{from{transform:translateY(40px);opacity:0}}
+
 /* nav */
 nav{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:2px solid var(--line);z-index:6;
   padding:0 env(safe-area-inset-right,0px) env(safe-area-inset-bottom,0px) env(safe-area-inset-left,0px)}
