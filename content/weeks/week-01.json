@@ -1,0 +1,129 @@
+{
+  "week": 1,
+  "title": "Meeting people and daily life",
+  "intro": "Introduce yourself, talk about your day and use the past tense correctly.",
+  "lessons": [
+    {
+      "id": "w1-l1",
+      "level": "A2",
+      "title": "Introducing yourself",
+      "intro": "The first two minutes of any conversation. Learn these and you will sound confident.",
+      "phrases": [
+        { "en": "Hi, I'm Kwame. Nice to meet you.", "note": "Use your own name. Say \"Nice to meet you\" only the first time you meet someone." },
+        { "en": "Where are you from?", "note": "A friendly way to start a conversation." },
+        { "en": "I'm from Ghana, but I live in Leeds now.", "note": "\"but\" joins two ideas that contrast." },
+        { "en": "What do you do?", "note": "This means \"What is your job?\", not \"What are you doing now?\"" },
+        { "en": "I work in logistics.", "note": "Say \"I work in\" + an industry, or \"I'm a/an\" + a job: I'm an engineer." },
+        { "en": "How long have you lived here?", "note": "Use the present perfect for something that started in the past and is still true." },
+        { "en": "Nice talking to you.", "note": "A polite way to end the conversation." }
+      ],
+      "tip": "British people often say \"Alright?\" as a greeting. It means \"Hello, how are you?\" Answer \"Yeah, good thanks, you?\"",
+      "dialogue": [
+        { "who": "Sam", "line": "Hi, I'm Sam. I don't think we've met." },
+        { "who": "You", "line": "Hi Sam, I'm Kwame. Nice to meet you." },
+        { "who": "Sam", "line": "Nice to meet you too. Where are you from?" },
+        { "who": "You", "line": "I'm from Ghana, but I've lived in Leeds for two years." },
+        { "who": "Sam", "line": "Oh, nice! And what do you do?" },
+        { "who": "You", "line": "I work in a warehouse. What about you?" }
+      ]
+    },
+    {
+      "id": "w1-l2",
+      "level": "A2",
+      "title": "Talking about your day",
+      "intro": "Describe your routine with the present simple: I wake up, he goes, they work.",
+      "phrases": [
+        { "en": "I usually get up at six o'clock.", "note": "\"usually\" goes before the main verb." },
+        { "en": "I have breakfast and then I go to work.", "note": "We say \"have breakfast\", not \"eat breakfast\", most of the time." },
+        { "en": "My wife takes our son to school.", "note": "he / she / it: add -s to the verb: takes, goes, works." },
+        { "en": "I finish work at half past five.", "note": "half past five = 5:30. quarter to six = 5:45." },
+        { "en": "In the evening, I relax and watch TV.", "note": "in the morning, in the afternoon, in the evening, but at night." },
+        { "en": "At the weekend, I go to church and see friends.", "note": "British English says \"at the weekend\". American English says \"on the weekend\"." }
+      ],
+      "tip": "Frequency words go before most verbs but after \"be\": I always walk to work. I am always tired on Monday."
+    },
+    {
+      "id": "w1-l3",
+      "level": "B1",
+      "title": "What did you do yesterday?",
+      "intro": "Use the past simple for finished actions. Many common verbs are irregular.",
+      "phrases": [
+        { "en": "Yesterday I went to the supermarket.", "note": "go → went" },
+        { "en": "I drove my son to school this morning.", "note": "drive → drove. \"this morning\" is finished, so use the past." },
+        { "en": "We had dinner with some friends.", "note": "have → had" },
+        { "en": "I bought a new phone last week.", "note": "buy → bought" },
+        { "en": "Did you watch the match on Saturday?", "note": "Questions: Did + subject + base verb. Not \"Did you watched\"." },
+        { "en": "No, I didn't. I was too tired.", "note": "Negative: didn't + base verb. be → was / were." }
+      ],
+      "tip": "Listen for -ed endings. \"worked\" sounds like \"workt\", \"played\" sounds like \"playd\", and \"wanted\" has an extra syllable: \"want-id\"."
+    }
+  ],
+  "cards": [
+    { "id": "w1-c01", "word": "colleague", "type": "noun", "meaning": "A person you work with.", "example": "My colleague helped me with the report." },
+    { "id": "w1-c02", "word": "neighbour", "type": "noun", "meaning": "A person who lives next to you or near you.", "example": "Our neighbours are very friendly." },
+    { "id": "w1-c03", "word": "commute", "type": "verb / noun", "meaning": "To travel to and from work every day.", "example": "I commute by bus. It takes 40 minutes." },
+    { "id": "w1-c04", "word": "to get up", "type": "phrasal verb", "meaning": "To get out of bed.", "example": "I get up at six on weekdays." },
+    { "id": "w1-c05", "word": "to get on with someone", "type": "phrasal verb", "meaning": "To have a good, friendly relationship with someone.", "example": "I get on well with my manager." },
+    { "id": "w1-c06", "word": "busy", "type": "adjective", "meaning": "Having a lot to do.", "example": "I'm really busy this week." },
+    { "id": "w1-c07", "word": "tired", "type": "adjective", "meaning": "Needing rest or sleep.", "example": "I was tired after the long shift." },
+    { "id": "w1-c08", "word": "to grow up", "type": "phrasal verb", "meaning": "To change from a child into an adult.", "example": "I grew up in Accra." },
+    { "id": "w1-c09", "word": "hometown", "type": "noun", "meaning": "The town or city where you were born or grew up.", "example": "My hometown is near the coast." },
+    { "id": "w1-c10", "word": "usually", "type": "adverb", "meaning": "Most of the time; normally.", "example": "I usually cook dinner at seven." },
+    { "id": "w1-c11", "word": "rarely", "type": "adverb", "meaning": "Not often.", "example": "I rarely eat fast food." },
+    { "id": "w1-c12", "word": "to look forward to", "type": "phrase", "meaning": "To feel happy about something that will happen.", "example": "I'm looking forward to the weekend." },
+    { "id": "w1-c13", "word": "chat", "type": "verb / noun", "meaning": "To talk in a friendly, informal way.", "example": "We had a quick chat after church." },
+    { "id": "w1-c14", "word": "a bit", "type": "phrase", "meaning": "A little; slightly.", "example": "I'm a bit cold. Can you close the window?" },
+    { "id": "w1-c15", "word": "cheers", "type": "informal", "meaning": "British: thank you, or goodbye. Also said when drinking together.", "example": "Cheers for your help!" },
+    { "id": "w1-c16", "word": "to sort out", "type": "phrasal verb", "meaning": "To fix or organise something.", "example": "I need to sort out my bank account." },
+    { "id": "w1-c17", "word": "appointment", "type": "noun", "meaning": "A fixed time to meet someone, like a doctor.", "example": "I have a doctor's appointment at ten." },
+    { "id": "w1-c18", "word": "to run late", "type": "phrase", "meaning": "To be later than planned.", "example": "Sorry, I'm running a bit late." },
+    { "id": "w1-c19", "word": "weekday", "type": "noun", "meaning": "Monday to Friday.", "example": "The shop is open until eight on weekdays." },
+    { "id": "w1-c20", "word": "fancy", "type": "verb (informal)", "meaning": "British: to want or like the idea of something.", "example": "Do you fancy a cup of tea?" }
+  ],
+  "quiz": [
+    { "q": "She ___ to work by bus every day.", "options": ["go", "goes", "going"], "answer": 1, "explain": "With he / she / it in the present simple, add -s: she goes." },
+    { "q": "I ___ in Leeds since 2023.", "options": ["live", "am living", "have lived"], "answer": 2, "explain": "Use the present perfect with \"since\" for something that started in the past and continues now." },
+    { "q": "Yesterday I ___ my son to school.", "options": ["drive", "drived", "drove"], "answer": 2, "explain": "\"drive\" is irregular: drive → drove → driven." },
+    { "q": "___ you watch the match on Saturday?", "options": ["Do", "Did", "Were"], "answer": 1, "explain": "Past simple question: Did + subject + base verb." },
+    { "q": "Which sentence is correct?", "options": ["I always am tired on Monday.", "I am always tired on Monday.", "Always I am tired on Monday."], "answer": 1, "explain": "Frequency words go after the verb \"be\": I am always…" },
+    { "q": "\"What do you do?\" means…", "options": ["What are you doing now?", "What is your job?", "What do you want?"], "answer": 1, "explain": "\"What do you do?\" is the common way to ask about someone's job." },
+    { "q": "In the UK, people often say ___ the weekend.", "options": ["at", "in", "for"], "answer": 0, "explain": "British English: at the weekend. American English: on the weekend." },
+    { "q": "\"I get on well with my manager\" means…", "options": ["I travel with my manager.", "I have a good relationship with my manager.", "I work more than my manager."], "answer": 1, "explain": "To get on (well) with someone = to have a friendly relationship." }
+  ],
+  "speak": [
+    { "id": "w1-s1", "text": "Hi, nice to meet you. I'm from Ghana, but I live in Leeds now." },
+    { "id": "w1-s2", "text": "I usually get up at six o'clock and have breakfast." },
+    { "id": "w1-s3", "text": "My wife takes our son to school in the morning." },
+    { "id": "w1-s4", "text": "I finish work at half past five.", "note": "\"half past\" is often said quickly: \"haaf paast\"." },
+    { "id": "w1-s5", "text": "Yesterday I went to the supermarket and bought some bread." },
+    { "id": "w1-s6", "text": "Did you watch the match on Saturday?" },
+    { "id": "w1-s7", "text": "I'm really looking forward to the weekend." },
+    { "id": "w1-s8", "text": "Sorry, I'm running a bit late. I'll be there in ten minutes." }
+  ],
+  "questions": [
+    {
+      "id": "w1-q1",
+      "context": "Small talk",
+      "q": "Tell me a little about yourself.",
+      "tips": ["Say where you are from and where you live now.", "Say what you do.", "Add one thing you enjoy."],
+      "model": "I'm originally from Ghana, but I've lived in Leeds for about two years. I work in a warehouse, and I'm learning English to get a better job. In my free time I like playing football and cooking.",
+      "useful": ["I'm originally from…", "I've lived here for…", "In my free time…"]
+    },
+    {
+      "id": "w1-q2",
+      "context": "Small talk",
+      "q": "What does a normal day look like for you?",
+      "tips": ["Use the present simple.", "Use time words: first, then, after that, in the evening."],
+      "model": "I usually get up at six and have a quick breakfast. Then I take the bus to work, which takes about forty minutes. I finish at half past five, and in the evening I cook dinner and relax with my family.",
+      "useful": ["First…", "Then…", "After that…", "In the evening…"]
+    },
+    {
+      "id": "w1-q3",
+      "context": "Past tense",
+      "q": "What did you do last weekend?",
+      "tips": ["Use the past simple: went, had, saw, bought.", "Say who you were with and how it was."],
+      "model": "On Saturday I went shopping in the city centre with my wife. In the evening we had dinner with some friends. On Sunday I went to church and then I relaxed at home. It was a nice, quiet weekend.",
+      "useful": ["On Saturday…", "It was really nice.", "We had a great time."]
+    }
+  ]
+}
