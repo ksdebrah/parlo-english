@@ -25,6 +25,7 @@
   const defaults = () => ({
     name: "", welcomed: false, xp: 0, days: [], cards: {}, lessonsDone: {}, quizBest: {},
     speakDone: {}, answered: {}, gameBest: {}, today: { date: "", done: {} },
+    quizLast: {}, history: {}, spellMiss: {}, lastSent: "",
     newToday: { date: "", count: 0 },
     settings: { accent: "en-GB", rate: 0.8, newPerDay: 8 }
   });
@@ -33,11 +34,16 @@
     const saved = JSON.parse(localStorage.getItem(STORE) || "null");
     if (saved) P = Object.assign(defaults(), saved, { settings: Object.assign(defaults().settings, saved.settings || {}) });
   } catch (e) { /* storage blocked: progress lasts this visit only */ }
-  function save() { try { localStorage.setItem(STORE, JSON.stringify(P)); } catch (e) {} renderStats(); }
+  function save() { try { localStorage.setItem(STORE, JSON.stringify(P)); } catch (e) {} renderStats(); queueSend(); }
 
   function doneToday(key) {
     if (P.today.date !== todayKey()) P.today = { date: todayKey(), done: {} };
-    if (key) P.today.done[key] = true;
+    if (key) {
+      P.today.done[key] = true;
+      P.history[todayKey()] = Object.keys(P.today.done);
+      const keys = Object.keys(P.history).sort();
+      while (keys.length > 60) delete P.history[keys.shift()];
+    }
     return P.today.done;
   }
   function addXP(n, key) {
@@ -126,8 +132,40 @@
   function stopRec() { if (rec) { try { rec.abort(); } catch (e) {} rec = null; } }
 
   // ---------- content ----------
-  let WEEKS = [], LESSONS = [], CARDS = [], QUESTIONS = [];
+  let WEEKS = [], LESSONS = [], CARDS = [], QUESTIONS = [], CONFIG = {};
+
+  // ---------- progress report (sent to a Google Form so King can see how it's going) ----------
+  function report() {
+    const days = P.days.slice().sort().slice(-30);
+    const cards = {};
+    Object.keys(P.cards).forEach(id => { const c = P.cards[id]; cards[id] = [c.box, c.lapses || 0]; });
+    return {
+      v: 1, name: P.name, sent: new Date().toISOString(), latestWeek: WEEKS.length ? latest().week : null,
+      streak: streak(), xp: P.xp, days, history: P.history, learned: learned(), totalCards: CARDS.length,
+      cards, lessonsDone: Object.keys(P.lessonsDone), quizBest: P.quizBest, quizLast: P.quizLast,
+      games: P.gameBest, spellMiss: P.spellMiss, speakDone: Object.keys(P.speakDone), answered: Object.keys(P.answered),
+      settings: { newPerDay: P.settings.newPerDay, rate: P.settings.rate, accent: P.settings.accent },
+      hasMic: !!Rec
+    };
+  }
+  let sendTimer = null;
+  function queueSend() { clearTimeout(sendTimer); sendTimer = setTimeout(sendProgress, 60000); }
+  function sendProgress() {
+    clearTimeout(sendTimer);
+    const f = CONFIG.progressForm;
+    if (!f || !f.url || !f.field || !P.welcomed || !navigator.onLine) return;
+    const r = report(), body = JSON.stringify(r);
+    const sig = JSON.stringify(Object.assign({}, r, { sent: "" }));
+    if (sig === P.lastSent) return;
+    try {
+      fetch(f.url, { method: "POST", mode: "no-cors", keepalive: true, body: new URLSearchParams({ [f.field]: body }) })
+        .then(() => { P.lastSent = sig; try { localStorage.setItem(STORE, JSON.stringify(P)); } catch (e) {} })
+        .catch(() => {});
+    } catch (e) {}
+  }
+  document.addEventListener("visibilitychange", () => { if (document.visibilityState === "hidden") sendProgress(); });
   async function loadContent() {
+    CONFIG = await fetch("content/config.json", { cache: "no-cache" }).then(r => r.json()).catch(() => ({}));
     const idx = await fetch("content/weeks.json", { cache: "no-cache" }).then(r => r.json());
     const packs = await Promise.all(idx.weeks.map(f =>
       fetch("content/weeks/" + f, { cache: "no-cache" }).then(r => r.json()).catch(() => null)));
@@ -293,9 +331,10 @@
   routes.quiz = arg => {
     const w = weekByNum(arg) || latest();
     const qs = w.quiz || [];
-    let i = 0, score = 0;
+    let i = 0, score = 0, wrongQ = [];
     const render = () => {
       if (i >= qs.length) {
+        P.quizLast[w.week] = { date: todayKey(), score, of: qs.length, wrong: wrongQ };
         const prev = P.quizBest[w.week];
         if (prev == null || score > prev) P.quizBest[w.week] = score;
         addXP(0, "quiz");
@@ -307,7 +346,7 @@
             <div class="score">${score}/${qs.length}</div>
             <p class="sub">${stars === 3 ? "Perfect! Amazing!" : stars === 2 ? "Good work! Try again for 3 stars." : "Keep going! Do the lessons, then try again."}</p>
             <button class="btn block" id="again">Try again</button><a class="btn white block" href="#home">Home</a></div>`;
-        $("#again").onclick = () => { i = 0; score = 0; render(); };
+        $("#again").onclick = () => { i = 0; score = 0; wrongQ = []; render(); };
         return;
       }
       const q = qs[i];
@@ -325,7 +364,7 @@
       $$(".opt").forEach(b => b.onclick = () => {
         const j = +b.dataset.j, ok = j === q.answer;
         $$(".opt").forEach((x, k) => { x.disabled = true; if (k === q.answer) x.classList.add("right"); });
-        if (ok) { score++; addXP(5); } else b.classList.add("wrong");
+        if (ok) { score++; addXP(5); } else { b.classList.add("wrong"); wrongQ.push(i); }
         const fb = $("#fb"); fb.hidden = false; fb.className = "feedback " + (ok ? "good" : "bad");
         fb.textContent = (ok ? "✅ Correct! " : "❌ Not quite. ") + (q.explain || "");
         $("#next").hidden = false;
@@ -396,7 +435,7 @@
     const st = P.cards[c.id] || { box: 0, due: 0 };
     session.queue.shift();
     if (r === "again") {
-      st.box = 0; st.due = dayNum();
+      st.box = 0; st.due = dayNum(); st.lapses = (st.lapses || 0) + 1;
       session.queue.splice(Math.min(3, session.queue.length), 0, c.id);
     } else {
       st.box = Math.min(5, st.box + 1);
@@ -580,7 +619,7 @@
         addXP(score * 2, "quiz");
         P.gameBest.review = Math.max(P.gameBest.review || 0, score);
         // words he got wrong come back in today's flashcards
-        missed.forEach(c => { P.cards[c.id] = { box: 0, due: dayNum() }; }); session = null; save();
+        missed.forEach(c => { P.cards[c.id] = { box: 0, due: dayNum(), lapses: ((P.cards[c.id] || {}).lapses || 0) + 1 }; }); session = null; save();
         const stars = score === qs.length ? 3 : score >= qs.length * .6 ? 2 : 1;
         if (stars === 3) confetti();
         view.innerHTML = `<div class="card center"><span class="label">My words quiz</span>
@@ -641,7 +680,7 @@
       if (i >= list.length) {
         P.gameBest.spelling = Math.max(P.gameBest.spelling || 0, score);
         addXP(score * 2, "game");
-        wrong.forEach(c => { P.cards[c.id] = { box: 0, due: dayNum() }; }); session = null; save();
+        wrong.forEach(c => { P.cards[c.id] = { box: 0, due: dayNum(), lapses: ((P.cards[c.id] || {}).lapses || 0) + 1 }; P.spellMiss[c.id] = (P.spellMiss[c.id] || 0) + 1; }); session = null; save();
         const stars = score === list.length ? 3 : score >= list.length * .6 ? 2 : 1;
         if (stars === 3) confetti();
         view.innerHTML = `<div class="card center"><span style="font-size:3rem">✏️</span><h1>Spelling test</h1>
@@ -832,7 +871,7 @@
         <p><b>Android:</b> tap ⋮ → <b>Install app</b> or <b>Add to Home screen</b>.</p>
         <p class="sub">Then it works like an app, even with no internet.</p></div>
       <div class="card"><span class="label">My progress</span>
-        <p class="sub">Saved on this phone. ${WEEKS.length} weeks of lessons.</p>
+        <p class="sub">Saved on this phone. ${WEEKS.length} weeks of lessons.${CONFIG.progressForm && CONFIG.progressForm.url ? ` Your progress is also sent to ${esc(CONFIG.sharedWith || "your teacher")} so he can plan your next lessons.` : ""}</p>
         <button class="btn red" id="reset">Start again from zero</button>
         <div id="confirm" hidden class="list"><b>Delete all stars, streak and words?</b><div class="grid2"><button class="btn red" id="yes">Yes, delete</button><button class="btn white" id="no">No</button></div></div></div>`;
     $("#accent").value = s.accent; $("#newper").value = s.newPerDay;
@@ -847,7 +886,7 @@
 
   // ---------- start ----------
   renderStats();
-  loadContent().then(go).catch(() => {
+  loadContent().then(() => { go(); setTimeout(sendProgress, 5000); }).catch(() => {
     view.innerHTML = `<div class="card center"><span style="font-size:3rem">📡</span><h2>Can't load the lessons</h2><p class="sub">Check your internet, then try again.</p><button class="btn" onclick="location.reload()">Try again</button></div>`;
   });
   if ("serviceWorker" in navigator && (location.protocol === "https:" || location.hostname === "localhost")) {
