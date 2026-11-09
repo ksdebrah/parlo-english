@@ -1,129 +1,143 @@
 {
   "week": 1,
-  "title": "Meeting people and daily life",
-  "intro": "Introduce yourself, talk about your day and use the past tense correctly.",
+  "title": "Hello! Me and my family",
+  "emoji": "👋",
+  "intro": "Say hello, say your name and talk about your family.",
   "lessons": [
     {
       "id": "w1-l1",
-      "level": "A2",
-      "title": "Introducing yourself",
-      "intro": "The first two minutes of any conversation. Learn these and you will sound confident.",
+      "level": "A1",
+      "emoji": "👋",
+      "title": "Hello and goodbye",
+      "intro": "Your first English words. Tap 🔊 to listen. Then say it out loud.",
       "phrases": [
-        { "en": "Hi, I'm Kwame. Nice to meet you.", "note": "Use your own name. Say \"Nice to meet you\" only the first time you meet someone." },
-        { "en": "Where are you from?", "note": "A friendly way to start a conversation." },
-        { "en": "I'm from Ghana, but I live in Leeds now.", "note": "\"but\" joins two ideas that contrast." },
-        { "en": "What do you do?", "note": "This means \"What is your job?\", not \"What are you doing now?\"" },
-        { "en": "I work in logistics.", "note": "Say \"I work in\" + an industry, or \"I'm a/an\" + a job: I'm an engineer." },
-        { "en": "How long have you lived here?", "note": "Use the present perfect for something that started in the past and is still true." },
-        { "en": "Nice talking to you.", "note": "A polite way to end the conversation." }
+        { "en": "Hello!", "note": "Use this with everyone." },
+        { "en": "Hi!", "note": "Friendly. For friends and family." },
+        { "en": "Good morning.", "note": "Before 12 o'clock." },
+        { "en": "Good afternoon.", "note": "From 12 o'clock to about 6 o'clock." },
+        { "en": "Good evening.", "note": "After about 6 o'clock." },
+        { "en": "How are you?", "note": "A question. People ask this a lot." },
+        { "en": "I'm fine, thank you.", "note": "An easy answer to \"How are you?\"" },
+        { "en": "Goodbye!", "note": "When you leave." },
+        { "en": "See you later!", "note": "A friendly goodbye." }
       ],
-      "tip": "British people often say \"Alright?\" as a greeting. It means \"Hello, how are you?\" Answer \"Yeah, good thanks, you?\"",
+      "tip": "\"Good night\" is only for going to bed. When you arrive in the evening, say \"Good evening\".",
       "dialogue": [
-        { "who": "Sam", "line": "Hi, I'm Sam. I don't think we've met." },
-        { "who": "You", "line": "Hi Sam, I'm Kwame. Nice to meet you." },
-        { "who": "Sam", "line": "Nice to meet you too. Where are you from?" },
-        { "who": "You", "line": "I'm from Ghana, but I've lived in Leeds for two years." },
-        { "who": "Sam", "line": "Oh, nice! And what do you do?" },
-        { "who": "You", "line": "I work in a warehouse. What about you?" }
+        { "who": "Anna", "line": "Hello! How are you?" },
+        { "who": "You", "line": "I'm fine, thank you. And you?" },
+        { "who": "Anna", "line": "I'm good, thanks." },
+        { "who": "You", "line": "Goodbye! See you later!" }
       ]
     },
     {
       "id": "w1-l2",
-      "level": "A2",
-      "title": "Talking about your day",
-      "intro": "Describe your routine with the present simple: I wake up, he goes, they work.",
+      "level": "A1",
+      "emoji": "🙋",
+      "title": "My name is…",
+      "intro": "Say your name and where you are from.",
       "phrases": [
-        { "en": "I usually get up at six o'clock.", "note": "\"usually\" goes before the main verb." },
-        { "en": "I have breakfast and then I go to work.", "note": "We say \"have breakfast\", not \"eat breakfast\", most of the time." },
-        { "en": "My wife takes our son to school.", "note": "he / she / it: add -s to the verb: takes, goes, works." },
-        { "en": "I finish work at half past five.", "note": "half past five = 5:30. quarter to six = 5:45." },
-        { "en": "In the evening, I relax and watch TV.", "note": "in the morning, in the afternoon, in the evening, but at night." },
-        { "en": "At the weekend, I go to church and see friends.", "note": "British English says \"at the weekend\". American English says \"on the weekend\"." }
+        { "en": "What's your name?", "note": "A question. \"What's\" = \"What is\"." },
+        { "en": "My name is Sam.", "note": "Say your own name." },
+        { "en": "I'm Sam.", "note": "The same, but shorter. \"I'm\" = \"I am\"." },
+        { "en": "Nice to meet you.", "note": "Say this when you meet someone new." },
+        { "en": "Where are you from?", "note": "A question about your country." },
+        { "en": "I'm from Spain.", "note": "Say your country." },
+        { "en": "I live in London.", "note": "Say your city." },
+        { "en": "Can you say that again, please?", "note": "Very useful when you don't understand!" }
       ],
-      "tip": "Frequency words go before most verbs but after \"be\": I always walk to work. I am always tired on Monday."
+      "tip": "Use \"please\" and \"thank you\" a lot. It is very polite in English.",
+      "dialogue": [
+        { "who": "Tom", "line": "Hi! What's your name?" },
+        { "who": "You", "line": "My name is Sam. Nice to meet you." },
+        { "who": "Tom", "line": "Nice to meet you too. Where are you from?" },
+        { "who": "You", "line": "I'm from Spain. I live in London." }
+      ]
     },
     {
       "id": "w1-l3",
-      "level": "B1",
-      "title": "What did you do yesterday?",
-      "intro": "Use the past simple for finished actions. Many common verbs are irregular.",
+      "level": "A1",
+      "emoji": "👨‍👩‍👧",
+      "title": "My family",
+      "intro": "Talk about the people in your family.",
       "phrases": [
-        { "en": "Yesterday I went to the supermarket.", "note": "go → went" },
-        { "en": "I drove my son to school this morning.", "note": "drive → drove. \"this morning\" is finished, so use the past." },
-        { "en": "We had dinner with some friends.", "note": "have → had" },
-        { "en": "I bought a new phone last week.", "note": "buy → bought" },
-        { "en": "Did you watch the match on Saturday?", "note": "Questions: Did + subject + base verb. Not \"Did you watched\"." },
-        { "en": "No, I didn't. I was too tired.", "note": "Negative: didn't + base verb. be → was / were." }
+        { "en": "This is my mother.", "note": "\"This is\" introduces a person." },
+        { "en": "This is my father.", "note": "Mother and father = parents." },
+        { "en": "I have one brother.", "note": "Use \"have\" for family." },
+        { "en": "I have two sisters.", "note": "More than one: add -s. sister → sisters." },
+        { "en": "My son is five.", "note": "Age: \"He is five\" or \"He is five years old\"." },
+        { "en": "My wife is a teacher.", "note": "Use \"a\" before a job: a teacher, a doctor." },
+        { "en": "I'm married.", "note": "Or: I'm single." },
+        { "en": "Do you have children?", "note": "A question. Children = more than one child." }
       ],
-      "tip": "Listen for -ed endings. \"worked\" sounds like \"workt\", \"played\" sounds like \"playd\", and \"wanted\" has an extra syllable: \"want-id\"."
+      "tip": "he = a man or boy. she = a woman or girl. My brother → he. My sister → she."
     }
   ],
   "cards": [
-    { "id": "w1-c01", "word": "colleague", "type": "noun", "meaning": "A person you work with.", "example": "My colleague helped me with the report." },
-    { "id": "w1-c02", "word": "neighbour", "type": "noun", "meaning": "A person who lives next to you or near you.", "example": "Our neighbours are very friendly." },
-    { "id": "w1-c03", "word": "commute", "type": "verb / noun", "meaning": "To travel to and from work every day.", "example": "I commute by bus. It takes 40 minutes." },
-    { "id": "w1-c04", "word": "to get up", "type": "phrasal verb", "meaning": "To get out of bed.", "example": "I get up at six on weekdays." },
-    { "id": "w1-c05", "word": "to get on with someone", "type": "phrasal verb", "meaning": "To have a good, friendly relationship with someone.", "example": "I get on well with my manager." },
-    { "id": "w1-c06", "word": "busy", "type": "adjective", "meaning": "Having a lot to do.", "example": "I'm really busy this week." },
-    { "id": "w1-c07", "word": "tired", "type": "adjective", "meaning": "Needing rest or sleep.", "example": "I was tired after the long shift." },
-    { "id": "w1-c08", "word": "to grow up", "type": "phrasal verb", "meaning": "To change from a child into an adult.", "example": "I grew up in Accra." },
-    { "id": "w1-c09", "word": "hometown", "type": "noun", "meaning": "The town or city where you were born or grew up.", "example": "My hometown is near the coast." },
-    { "id": "w1-c10", "word": "usually", "type": "adverb", "meaning": "Most of the time; normally.", "example": "I usually cook dinner at seven." },
-    { "id": "w1-c11", "word": "rarely", "type": "adverb", "meaning": "Not often.", "example": "I rarely eat fast food." },
-    { "id": "w1-c12", "word": "to look forward to", "type": "phrase", "meaning": "To feel happy about something that will happen.", "example": "I'm looking forward to the weekend." },
-    { "id": "w1-c13", "word": "chat", "type": "verb / noun", "meaning": "To talk in a friendly, informal way.", "example": "We had a quick chat after church." },
-    { "id": "w1-c14", "word": "a bit", "type": "phrase", "meaning": "A little; slightly.", "example": "I'm a bit cold. Can you close the window?" },
-    { "id": "w1-c15", "word": "cheers", "type": "informal", "meaning": "British: thank you, or goodbye. Also said when drinking together.", "example": "Cheers for your help!" },
-    { "id": "w1-c16", "word": "to sort out", "type": "phrasal verb", "meaning": "To fix or organise something.", "example": "I need to sort out my bank account." },
-    { "id": "w1-c17", "word": "appointment", "type": "noun", "meaning": "A fixed time to meet someone, like a doctor.", "example": "I have a doctor's appointment at ten." },
-    { "id": "w1-c18", "word": "to run late", "type": "phrase", "meaning": "To be later than planned.", "example": "Sorry, I'm running a bit late." },
-    { "id": "w1-c19", "word": "weekday", "type": "noun", "meaning": "Monday to Friday.", "example": "The shop is open until eight on weekdays." },
-    { "id": "w1-c20", "word": "fancy", "type": "verb (informal)", "meaning": "British: to want or like the idea of something.", "example": "Do you fancy a cup of tea?" }
+    { "id": "w1-c01", "emoji": "👋", "word": "hello", "meaning": "What you say when you see someone.", "example": "Hello! How are you?" },
+    { "id": "w1-c02", "emoji": "🙏", "word": "thank you", "meaning": "What you say when someone helps you.", "example": "Thank you for your help." },
+    { "id": "w1-c03", "emoji": "✅", "word": "yes", "meaning": "The opposite of no.", "example": "Yes, please." },
+    { "id": "w1-c04", "emoji": "❌", "word": "no", "meaning": "The opposite of yes.", "example": "No, thank you." },
+    { "id": "w1-c05", "emoji": "👩", "word": "mother", "meaning": "Your mum. A woman who has a child.", "example": "My mother is very kind." },
+    { "id": "w1-c06", "emoji": "👨", "word": "father", "meaning": "Your dad. A man who has a child.", "example": "My father lives in Spain." },
+    { "id": "w1-c07", "emoji": "👦", "word": "brother", "meaning": "A boy or man with the same parents as you.", "example": "I have one brother." },
+    { "id": "w1-c08", "emoji": "👧", "word": "sister", "meaning": "A girl or woman with the same parents as you.", "example": "My sister is ten." },
+    { "id": "w1-c09", "emoji": "👶", "word": "baby", "meaning": "A very young child.", "example": "The baby is sleeping." },
+    { "id": "w1-c10", "emoji": "🧒", "word": "child", "meaning": "A young person. More than one = children.", "example": "I have two children." },
+    { "id": "w1-c11", "emoji": "🧑‍🤝‍🧑", "word": "friend", "meaning": "A person you like and know well.", "example": "This is my friend Tom." },
+    { "id": "w1-c12", "emoji": "🏠", "word": "house", "meaning": "A building where people live.", "example": "My house is small." },
+    { "id": "w1-c13", "emoji": "🌍", "word": "country", "meaning": "For example: Spain, Brazil, Ghana, England.", "example": "What country are you from?" },
+    { "id": "w1-c14", "emoji": "🏙️", "word": "city", "meaning": "A big town. For example: London.", "example": "I live in a big city." },
+    { "id": "w1-c15", "emoji": "📛", "word": "name", "meaning": "What people call you.", "example": "My name is Sam." },
+    { "id": "w1-c16", "emoji": "👩‍🏫", "word": "teacher", "meaning": "A person who teaches at a school.", "example": "She is a teacher." },
+    { "id": "w1-c17", "emoji": "🌅", "word": "morning", "meaning": "The first part of the day.", "example": "Good morning!" },
+    { "id": "w1-c18", "emoji": "🌙", "word": "night", "meaning": "When it is dark and people sleep.", "example": "Good night!" },
+    { "id": "w1-c19", "emoji": "😊", "word": "happy", "meaning": "Feeling good.", "example": "I'm happy today." },
+    { "id": "w1-c20", "emoji": "😴", "word": "tired", "meaning": "You need to sleep.", "example": "I'm very tired." }
   ],
   "quiz": [
-    { "q": "She ___ to work by bus every day.", "options": ["go", "goes", "going"], "answer": 1, "explain": "With he / she / it in the present simple, add -s: she goes." },
-    { "q": "I ___ in Leeds since 2023.", "options": ["live", "am living", "have lived"], "answer": 2, "explain": "Use the present perfect with \"since\" for something that started in the past and continues now." },
-    { "q": "Yesterday I ___ my son to school.", "options": ["drive", "drived", "drove"], "answer": 2, "explain": "\"drive\" is irregular: drive → drove → driven." },
-    { "q": "___ you watch the match on Saturday?", "options": ["Do", "Did", "Were"], "answer": 1, "explain": "Past simple question: Did + subject + base verb." },
-    { "q": "Which sentence is correct?", "options": ["I always am tired on Monday.", "I am always tired on Monday.", "Always I am tired on Monday."], "answer": 1, "explain": "Frequency words go after the verb \"be\": I am always…" },
-    { "q": "\"What do you do?\" means…", "options": ["What are you doing now?", "What is your job?", "What do you want?"], "answer": 1, "explain": "\"What do you do?\" is the common way to ask about someone's job." },
-    { "q": "In the UK, people often say ___ the weekend.", "options": ["at", "in", "for"], "answer": 0, "explain": "British English: at the weekend. American English: on the weekend." },
-    { "q": "\"I get on well with my manager\" means…", "options": ["I travel with my manager.", "I have a good relationship with my manager.", "I work more than my manager."], "answer": 1, "explain": "To get on (well) with someone = to have a friendly relationship." }
+    { "q": "Listen. What do you hear?", "say": "Good morning", "options": ["Good night", "Good morning", "Goodbye"], "answer": 1, "explain": "\"Good morning\" is for before 12 o'clock." },
+    { "q": "Someone says \"How are you?\" What do you say?", "options": ["I'm fine, thank you.", "My name is Sam.", "I'm from Spain."], "answer": 0, "explain": "\"I'm fine, thank you\" answers \"How are you?\"" },
+    { "q": "Listen. Tap the picture.", "say": "mother", "options": ["👨", "👩", "👶"], "answer": 1, "explain": "👩 mother" },
+    { "q": "\"I'm\" means…", "options": ["I am", "I have", "I is"], "answer": 0, "explain": "I'm = I am. I'm Sam = I am Sam." },
+    { "q": "My ___ is Sam.", "options": ["name", "house", "country"], "answer": 0, "explain": "My name is Sam." },
+    { "q": "Listen. Tap the picture.", "say": "house", "options": ["🏠", "🌍", "🏙️"], "answer": 0, "explain": "🏠 house" },
+    { "q": "I have two ___.", "options": ["sister", "sisters", "sisteres"], "answer": 1, "explain": "More than one: add -s. two sisters." },
+    { "q": "It is 10 o'clock at night. You go to bed. What do you say?", "options": ["Good morning", "Good evening", "Good night"], "answer": 2, "explain": "\"Good night\" is for going to bed." }
   ],
   "speak": [
-    { "id": "w1-s1", "text": "Hi, nice to meet you. I'm from Ghana, but I live in Leeds now." },
-    { "id": "w1-s2", "text": "I usually get up at six o'clock and have breakfast." },
-    { "id": "w1-s3", "text": "My wife takes our son to school in the morning." },
-    { "id": "w1-s4", "text": "I finish work at half past five.", "note": "\"half past\" is often said quickly: \"haaf paast\"." },
-    { "id": "w1-s5", "text": "Yesterday I went to the supermarket and bought some bread." },
-    { "id": "w1-s6", "text": "Did you watch the match on Saturday?" },
-    { "id": "w1-s7", "text": "I'm really looking forward to the weekend." },
-    { "id": "w1-s8", "text": "Sorry, I'm running a bit late. I'll be there in ten minutes." }
+    { "id": "w1-s1", "text": "Hello! How are you?" },
+    { "id": "w1-s2", "text": "I'm fine, thank you." },
+    { "id": "w1-s3", "text": "My name is Sam." },
+    { "id": "w1-s4", "text": "Nice to meet you." },
+    { "id": "w1-s5", "text": "I'm from Spain." },
+    { "id": "w1-s6", "text": "This is my mother." },
+    { "id": "w1-s7", "text": "I have one brother and two sisters." },
+    { "id": "w1-s8", "text": "Can you say that again, please?" }
   ],
   "questions": [
     {
       "id": "w1-q1",
-      "context": "Small talk",
-      "q": "Tell me a little about yourself.",
-      "tips": ["Say where you are from and where you live now.", "Say what you do.", "Add one thing you enjoy."],
-      "model": "I'm originally from Ghana, but I've lived in Leeds for about two years. I work in a warehouse, and I'm learning English to get a better job. In my free time I like playing football and cooking.",
-      "useful": ["I'm originally from…", "I've lived here for…", "In my free time…"]
+      "context": "About you",
+      "q": "What's your name?",
+      "tips": ["Start with \"My name is…\""],
+      "model": "My name is Sam. Nice to meet you.",
+      "useful": ["My name is…", "I'm…", "Nice to meet you."]
     },
     {
       "id": "w1-q2",
-      "context": "Small talk",
-      "q": "What does a normal day look like for you?",
-      "tips": ["Use the present simple.", "Use time words: first, then, after that, in the evening."],
-      "model": "I usually get up at six and have a quick breakfast. Then I take the bus to work, which takes about forty minutes. I finish at half past five, and in the evening I cook dinner and relax with my family.",
-      "useful": ["First…", "Then…", "After that…", "In the evening…"]
+      "context": "About you",
+      "q": "Where are you from?",
+      "tips": ["Say your country: \"I'm from…\"", "Say your city: \"I live in…\""],
+      "model": "I'm from Spain. I live in London now.",
+      "useful": ["I'm from…", "I live in…"]
     },
     {
       "id": "w1-q3",
-      "context": "Past tense",
-      "q": "What did you do last weekend?",
-      "tips": ["Use the past simple: went, had, saw, bought.", "Say who you were with and how it was."],
-      "model": "On Saturday I went shopping in the city centre with my wife. In the evening we had dinner with some friends. On Sunday I went to church and then I relaxed at home. It was a nice, quiet weekend.",
-      "useful": ["On Saturday…", "It was really nice.", "We had a great time."]
+      "context": "Your family",
+      "q": "Tell me about your family.",
+      "tips": ["Use \"I have…\"", "Say how many: one brother, two sisters."],
+      "model": "I have a big family. I have one brother and two sisters. My mother and father live in Spain.",
+      "useful": ["I have…", "My mother…", "My father…"]
     }
   ]
 }

@@ -1,130 +1,135 @@
 {
   "week": 2,
-  "title": "Out and about: shops, cafés and getting around",
-  "intro": "Ask politely, order food, find your way and understand what people say back.",
+  "title": "Food and shopping",
+  "emoji": "🛒",
+  "intro": "Learn food words and buy things in a shop or café.",
   "lessons": [
     {
       "id": "w2-l1",
-      "level": "A2",
-      "title": "Polite requests",
-      "intro": "In British English, polite words matter a lot. \"Could I…?\" sounds much better than \"I want…\".",
+      "level": "A1",
+      "emoji": "🍎",
+      "title": "Food I like",
+      "intro": "Say what you like and what you don't like.",
       "phrases": [
-        { "en": "Could I have a coffee, please?", "note": "The most useful request in English. Use it everywhere." },
-        { "en": "Can I get a receipt, please?", "note": "\"Can I get\" is common and fine in shops and cafés." },
-        { "en": "Would you mind helping me with this?", "note": "Very polite. After \"Would you mind\", use the -ing form." },
-        { "en": "Sorry, could you say that again?", "note": "Use this when you don't understand. People are happy to repeat." },
-        { "en": "Could you speak a bit more slowly, please?", "note": "Nobody will think this is strange." },
-        { "en": "Excuse me, do you work here?", "note": "\"Excuse me\" gets someone's attention. \"Sorry\" is for after you bump into someone." },
-        { "en": "That's all, thanks.", "note": "Say this when you've finished ordering or buying." }
+        { "en": "I like rice.", "note": "\"I like\" + a thing." },
+        { "en": "I don't like fish.", "note": "\"don't\" = \"do not\"." },
+        { "en": "Do you like chicken?", "note": "A question. Start with \"Do you…?\"" },
+        { "en": "Yes, I do.", "note": "A short answer: yes." },
+        { "en": "No, I don't.", "note": "A short answer: no." },
+        { "en": "I'm hungry.", "note": "You want to eat." },
+        { "en": "I'm thirsty.", "note": "You want to drink." },
+        { "en": "It's very good!", "note": "Say this when the food is nice." }
       ],
-      "tip": "Say \"please\" and \"thank you\" more than you think you need to. In the UK, \"Thanks\" or \"Cheers\" after almost every small service is normal."
+      "tip": "He or she: add -s to like. I like tea. She likes coffee."
     },
     {
       "id": "w2-l2",
-      "level": "A2",
-      "title": "At a café or restaurant",
-      "intro": "From the table to the bill, these are the phrases you will hear and use.",
+      "level": "A1",
+      "emoji": "☕",
+      "title": "At the café",
+      "intro": "Order food and drink. Always say \"please\"!",
       "phrases": [
-        { "en": "A table for two, please.", "note": "Say the number of people." },
-        { "en": "Are you ready to order?", "note": "The waiter will ask this. Answer: \"Yes, please\" or \"Could we have a few more minutes?\"" },
-        { "en": "I'll have the chicken curry, please.", "note": "\"I'll have…\" is the natural way to order food." },
-        { "en": "Is it spicy?", "note": "Ask about the food before you order." },
-        { "en": "Eat in or take away?", "note": "In cafés. Answer \"Eat in, please\" or \"To take away\"." },
-        { "en": "Could we have the bill, please?", "note": "British: bill. American: check." },
-        { "en": "Can I pay by card?", "note": "Most places say \"Yes, just tap it here\" for contactless." }
+        { "en": "Can I have a tea, please?", "note": "The easiest way to order." },
+        { "en": "A coffee, please.", "note": "Short and polite." },
+        { "en": "With milk, please.", "note": "Or: without milk." },
+        { "en": "How much is it?", "note": "Ask the price." },
+        { "en": "It's three pounds.", "note": "£3 = three pounds. 50p = fifty pence." },
+        { "en": "Can I pay by card?", "note": "Card or cash?" },
+        { "en": "Thank you very much!", "note": "Very polite." }
       ],
       "dialogue": [
-        { "who": "Waiter", "line": "Hi there, are you ready to order?" },
-        { "who": "You", "line": "Yes, please. I'll have the chicken curry with rice." },
-        { "who": "Waiter", "line": "Lovely. Anything to drink?" },
-        { "who": "You", "line": "Could I have a sparkling water, please?" },
-        { "who": "Waiter", "line": "Of course. Is that everything?" },
-        { "who": "You", "line": "Yes, that's all, thanks." }
+        { "who": "Waiter", "line": "Hello! What would you like?" },
+        { "who": "You", "line": "Can I have a tea, please?" },
+        { "who": "Waiter", "line": "With milk?" },
+        { "who": "You", "line": "Yes, please. How much is it?" },
+        { "who": "Waiter", "line": "It's two pounds fifty." },
+        { "who": "You", "line": "Can I pay by card?" },
+        { "who": "Waiter", "line": "Yes, of course." }
       ]
     },
     {
       "id": "w2-l3",
-      "level": "B1",
-      "title": "Asking for directions",
-      "intro": "Ask the way and understand the answer, including British words like \"roundabout\".",
+      "level": "A1",
+      "emoji": "🛒",
+      "title": "In the shop",
+      "intro": "Find things and pay in a shop.",
       "phrases": [
-        { "en": "Excuse me, how do I get to the train station?", "note": "\"How do I get to…?\" works for any place." },
-        { "en": "Is it far from here?", "note": "The answer might be \"It's about a ten-minute walk.\"" },
-        { "en": "Go straight on, then take the second left.", "note": "\"straight on\" = keep going forward." },
-        { "en": "It's opposite the bank.", "note": "opposite = on the other side of the road, facing it." },
-        { "en": "It's next to the post office.", "note": "next to = beside." },
-        { "en": "Turn right at the roundabout.", "note": "A roundabout is a circle where roads meet. Very common in the UK." },
-        { "en": "Which bus goes to the city centre?", "note": "UK English: city centre. US: downtown." }
+        { "en": "Excuse me.", "note": "Say this to start talking to someone." },
+        { "en": "Where is the bread?", "note": "Ask where a thing is." },
+        { "en": "It's over there.", "note": "The answer. They point to it." },
+        { "en": "Do you have eggs?", "note": "Ask if the shop has it." },
+        { "en": "I need a bag, please.", "note": "Bags often cost money in the UK." },
+        { "en": "That's all, thank you.", "note": "You don't want more." }
       ],
-      "tip": "If someone gives long directions, repeat the main part back: \"So, straight on and second left?\" It checks you understood and gives them a chance to correct you."
+      "tip": "Numbers for money: one, two, three, four, five, six, seven, eight, nine, ten. Practise them with the 🔊 button!"
     }
   ],
   "cards": [
-    { "id": "w2-c01", "word": "receipt", "type": "noun", "meaning": "A piece of paper that shows what you paid. The p is silent: \"ri-SEET\".", "example": "Do you want the receipt in the bag?" },
-    { "id": "w2-c02", "word": "queue", "type": "noun / verb", "meaning": "A line of people waiting; to wait in a line.", "example": "There was a long queue at the post office." },
-    { "id": "w2-c03", "word": "change", "type": "noun", "meaning": "The money you get back when you pay too much.", "example": "Here's your change, 50p." },
-    { "id": "w2-c04", "word": "contactless", "type": "adjective", "meaning": "Paying by touching your card or phone on the machine.", "example": "Can I pay contactless?" },
-    { "id": "w2-c05", "word": "refund", "type": "noun", "meaning": "Money given back when you return something.", "example": "I'd like a refund for these shoes." },
-    { "id": "w2-c06", "word": "on offer", "type": "phrase", "meaning": "Cheaper than usual for a short time.", "example": "Rice is on offer this week: buy one, get one free." },
-    { "id": "w2-c07", "word": "the bill", "type": "noun", "meaning": "The paper that shows how much you must pay in a restaurant.", "example": "Could we have the bill, please?" },
-    { "id": "w2-c08", "word": "take away", "type": "phrase", "meaning": "Food you buy and eat somewhere else. Also \"a takeaway\".", "example": "Shall we get a takeaway tonight?" },
-    { "id": "w2-c09", "word": "starter", "type": "noun", "meaning": "A small dish you eat before the main course.", "example": "We shared a starter and then had pizza." },
-    { "id": "w2-c10", "word": "to book", "type": "verb", "meaning": "To reserve a table, ticket or appointment.", "example": "I booked a table for eight o'clock." },
-    { "id": "w2-c11", "word": "opposite", "type": "preposition", "meaning": "On the other side, facing something.", "example": "The bank is opposite the station." },
-    { "id": "w2-c12", "word": "roundabout", "type": "noun", "meaning": "A circular junction where several roads meet.", "example": "Take the third exit at the roundabout." },
-    { "id": "w2-c13", "word": "pavement", "type": "noun", "meaning": "British: the path for walking beside a road. US: sidewalk.", "example": "Please walk on the pavement." },
-    { "id": "w2-c14", "word": "return ticket", "type": "noun", "meaning": "A ticket to go somewhere and come back.", "example": "A return ticket to Manchester, please." },
-    { "id": "w2-c15", "word": "single", "type": "noun", "meaning": "A ticket for one direction only.", "example": "Just a single to Leeds, please." },
-    { "id": "w2-c16", "word": "platform", "type": "noun", "meaning": "Where you wait to get on a train.", "example": "The train leaves from platform 4." },
-    { "id": "w2-c17", "word": "delayed", "type": "adjective", "meaning": "Later than planned.", "example": "The 8:15 train is delayed by ten minutes." },
-    { "id": "w2-c18", "word": "Would you mind…?", "type": "phrase", "meaning": "A very polite way to ask someone to do something. Use -ing after it.", "example": "Would you mind opening the window?" },
-    { "id": "w2-c19", "word": "lovely", "type": "adjective", "meaning": "British: nice, good. Often used by shop staff to mean \"OK, great\".", "example": "Lovely, that's £4.50 please." },
-    { "id": "w2-c20", "word": "to top up", "type": "phrasal verb", "meaning": "To add more money to a card or phone.", "example": "I need to top up my bus card." }
+    { "id": "w2-c01", "emoji": "🍞", "word": "bread", "meaning": "Food made from flour. You make toast with it.", "example": "I eat bread in the morning." },
+    { "id": "w2-c02", "emoji": "🍚", "word": "rice", "meaning": "Small white grains. You cook them in water.", "example": "I like rice and chicken." },
+    { "id": "w2-c03", "emoji": "🍎", "word": "apple", "meaning": "A round fruit. Red or green.", "example": "An apple a day!" },
+    { "id": "w2-c04", "emoji": "🍌", "word": "banana", "meaning": "A long yellow fruit.", "example": "Bananas are cheap." },
+    { "id": "w2-c05", "emoji": "🥚", "word": "egg", "meaning": "Chickens make them. You can cook them.", "example": "I have two eggs for breakfast." },
+    { "id": "w2-c06", "emoji": "🥛", "word": "milk", "meaning": "A white drink from cows.", "example": "Tea with milk, please." },
+    { "id": "w2-c07", "emoji": "🍗", "word": "chicken", "meaning": "A bird. Also the meat from the bird.", "example": "Do you like chicken?" },
+    { "id": "w2-c08", "emoji": "🐟", "word": "fish", "meaning": "An animal that lives in water.", "example": "I don't like fish." },
+    { "id": "w2-c09", "emoji": "🍵", "word": "tea", "meaning": "A hot drink. Very popular in the UK.", "example": "A cup of tea, please." },
+    { "id": "w2-c10", "emoji": "☕", "word": "coffee", "meaning": "A hot brown drink.", "example": "I drink coffee every day." },
+    { "id": "w2-c11", "emoji": "💧", "word": "water", "meaning": "You drink it. It comes from the tap.", "example": "Can I have some water, please?" },
+    { "id": "w2-c12", "emoji": "🍅", "word": "tomato", "meaning": "A soft red vegetable. Many: tomatoes.", "example": "I need three tomatoes." },
+    { "id": "w2-c13", "emoji": "🧀", "word": "cheese", "meaning": "Yellow or white food made from milk.", "example": "A cheese sandwich, please." },
+    { "id": "w2-c14", "emoji": "💷", "word": "money", "meaning": "You use it to buy things. Pounds and pence.", "example": "I don't have much money." },
+    { "id": "w2-c15", "emoji": "💳", "word": "card", "meaning": "A bank card. You pay with it.", "example": "Can I pay by card?" },
+    { "id": "w2-c16", "emoji": "🛍️", "word": "bag", "meaning": "You carry things in it.", "example": "Do you need a bag?" },
+    { "id": "w2-c17", "emoji": "🏪", "word": "shop", "meaning": "A place where you buy things.", "example": "The shop is open." },
+    { "id": "w2-c18", "emoji": "😋", "word": "hungry", "meaning": "You want to eat.", "example": "I'm very hungry!" },
+    { "id": "w2-c19", "emoji": "🥤", "word": "thirsty", "meaning": "You want to drink.", "example": "I'm thirsty. Where is the water?" },
+    { "id": "w2-c20", "emoji": "🍕", "word": "pizza", "meaning": "Flat bread with cheese and tomato.", "example": "Let's eat pizza tonight!" }
   ],
   "quiz": [
-    { "q": "Which is the most polite way to order?", "options": ["I want a coffee.", "Give me a coffee.", "Could I have a coffee, please?"], "answer": 2, "explain": "\"Could I have…, please?\" is polite and natural." },
-    { "q": "Would you mind ___ the door?", "options": ["to close", "closing", "close"], "answer": 1, "explain": "After \"Would you mind\", use the -ing form: closing." },
-    { "q": "In a British restaurant, you ask for the ___.", "options": ["bill", "check", "account"], "answer": 0, "explain": "British English: the bill. American English: the check." },
-    { "q": "\"The bank is opposite the station\" means the bank is…", "options": ["next to the station", "on the other side of the road from the station", "behind the station"], "answer": 1, "explain": "Opposite = facing it, on the other side." },
-    { "q": "You want to travel to London and come back. You buy a…", "options": ["single ticket", "return ticket", "double ticket"], "answer": 1, "explain": "A return ticket is there and back. A single is one way." },
-    { "q": "How do you say \"receipt\"?", "options": ["ri-SEPT", "ri-SEET", "REE-sipt"], "answer": 1, "explain": "The p is silent: ri-SEET." },
-    { "q": "You didn't understand. What do you say?", "options": ["What?", "Sorry, could you say that again?", "Repeat."], "answer": 1, "explain": "\"Sorry, could you say that again?\" is polite and very common." },
-    { "q": "Rice is \"on offer\". This means it is…", "options": ["free", "cheaper than usual", "sold out"], "answer": 1, "explain": "On offer = on special sale for a short time." }
+    { "q": "Listen. Tap the picture.", "say": "apple", "options": ["🍌", "🍎", "🍅"], "answer": 1, "explain": "🍎 apple" },
+    { "q": "Listen. Tap the picture.", "say": "milk", "options": ["🥛", "💧", "☕"], "answer": 0, "explain": "🥛 milk" },
+    { "q": "I ___ like fish.", "options": ["not", "don't", "no"], "answer": 1, "explain": "I don't like fish. don't = do not." },
+    { "q": "You want a tea. What do you say?", "options": ["Tea!", "Give me tea.", "Can I have a tea, please?"], "answer": 2, "explain": "\"Can I have…, please?\" is polite." },
+    { "q": "You want to know the price. What do you say?", "options": ["How much is it?", "How are you?", "Where is it?"], "answer": 0, "explain": "\"How much is it?\" asks the price." },
+    { "q": "Listen. What do you hear?", "say": "It's three pounds", "options": ["It's two pounds", "It's three pounds", "It's ten pounds"], "answer": 1, "explain": "three = 3. £3." },
+    { "q": "You want to eat. You are…", "options": ["thirsty", "tired", "hungry"], "answer": 2, "explain": "hungry = you want to eat. thirsty = you want to drink." },
+    { "q": "She ___ coffee.", "options": ["like", "likes", "liking"], "answer": 1, "explain": "He or she: add -s. She likes coffee." }
   ],
   "speak": [
-    { "id": "w2-s1", "text": "Could I have a coffee, please?" },
-    { "id": "w2-s2", "text": "Sorry, could you say that again a bit more slowly?" },
-    { "id": "w2-s3", "text": "I'll have the chicken curry with rice, please." },
-    { "id": "w2-s4", "text": "Could we have the bill, please? Can I pay by card?" },
-    { "id": "w2-s5", "text": "Excuse me, how do I get to the train station?" },
-    { "id": "w2-s6", "text": "Go straight on, then turn right at the roundabout." },
-    { "id": "w2-s7", "text": "A return ticket to Manchester, please.", "note": "Stress the second syllable: re-TURN." },
-    { "id": "w2-s8", "text": "Would you mind helping me with these bags?" }
+    { "id": "w2-s1", "text": "I like rice and chicken." },
+    { "id": "w2-s2", "text": "I don't like fish." },
+    { "id": "w2-s3", "text": "Can I have a tea, please?" },
+    { "id": "w2-s4", "text": "With milk, please." },
+    { "id": "w2-s5", "text": "How much is it?" },
+    { "id": "w2-s6", "text": "Can I pay by card?" },
+    { "id": "w2-s7", "text": "Excuse me. Where is the bread?" },
+    { "id": "w2-s8", "text": "That's all, thank you." }
   ],
   "questions": [
     {
       "id": "w2-q1",
-      "context": "Role play: café",
-      "q": "Hi there! What can I get you today?",
-      "tips": ["Order one drink and one thing to eat.", "Use \"Could I have…\" or \"I'll have…\".", "Answer the question \"Eat in or take away?\""],
-      "model": "Hi, could I have a large latte and a chicken sandwich, please? To take away, please. Can I pay contactless?",
-      "useful": ["Could I have…", "To take away, please.", "That's all, thanks."]
+      "context": "Food",
+      "q": "What food do you like?",
+      "tips": ["Use \"I like…\" and \"I don't like…\""],
+      "model": "I like rice and chicken. I don't like fish.",
+      "useful": ["I like…", "I don't like…", "I love…"]
     },
     {
       "id": "w2-q2",
-      "context": "Role play: shop",
-      "q": "You bought a jacket, but it's too small. What do you say to the shop assistant?",
-      "tips": ["Say what the problem is.", "Say what you want: a different size or a refund.", "Mention that you have the receipt."],
-      "model": "Hi, I bought this jacket here last week, but it's too small for me. Could I change it for a bigger size? If you don't have one, I'd like a refund, please. I've got the receipt here.",
-      "useful": ["It's too small / big.", "Could I change it for…?", "I'd like a refund, please."]
+      "context": "At the café",
+      "q": "Hello! What would you like?",
+      "tips": ["Order a drink.", "Say \"please\"."],
+      "model": "Can I have a coffee with milk, please?",
+      "useful": ["Can I have…, please?", "With milk, please."]
     },
     {
       "id": "w2-q3",
-      "context": "Giving directions",
-      "q": "Someone asks you: \"Excuse me, is there a supermarket near here?\" Give them directions.",
-      "tips": ["Say if it's near or far.", "Use: go straight on, turn left/right, it's next to / opposite…"],
-      "model": "Yes, there's one about five minutes from here. Go straight on down this road, then take the first left. The supermarket is on your right, opposite the bank.",
-      "useful": ["It's about a five-minute walk.", "Take the first left.", "It's on your right."]
+      "context": "In the shop",
+      "q": "You can't find the eggs. Ask a shop worker.",
+      "tips": ["Start with \"Excuse me.\"", "Ask: \"Where is…?\" or \"Do you have…?\""],
+      "model": "Excuse me. Do you have eggs? Where are they?",
+      "useful": ["Excuse me.", "Where is…?", "Do you have…?"]
     }
   ]
 }

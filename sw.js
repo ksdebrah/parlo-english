@@ -1,7 +1,7 @@
 // Offline support. Content files are fetched fresh when online (so weekly updates
 // appear straight away) and fall back to the saved copy when offline.
 // If you change index.html, css or js, bump VERSION so phones pick up the new files.
-const VERSION = "parlo-v1";
+const VERSION = "parlo-v2";
 const SHELL = [
   "./", "index.html", "css/style.css", "js/app.js", "manifest.webmanifest",
   "icons/icon-192.png", "icons/icon-512.png", "icons/icon-180.png"

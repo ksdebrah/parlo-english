@@ -1,8 +1,15 @@
 # Parlo English
 
-A small English-learning app for one learner. It's a static site: no server, no accounts, no AI.
-It has lessons with audio, flashcards with spaced repetition, quizzes, read-aloud speaking checks
-and practice questions. Progress is saved on the learner's phone.
+A bright, beginner-friendly English app for one learner. It's a static site: no server, no accounts, no AI.
+
+- **Learn:** lessons with audio (tap 🔊), a weekly quiz, a "My words" quiz built from the words he has studied, and a spelling test (listen and type).
+- **Words:** picture flashcards with spaced repetition.
+- **Play:** three games: Listen & Tap, Match Pairs, Spell It.
+- **Speak:** read-aloud checks and practice questions.
+
+Progress is saved on the learner's phone. Words he gets wrong in quizzes or spelling come back in his flashcards the same day.
+
+**Every flashcard needs an `emoji`.** The games and quizzes use the pictures.
 
 ## How it's organised
 
@@ -45,8 +52,12 @@ automatically (10 new words a day by default; he can change this in Settings).
     "tip": "optional",
     "dialogue": [{ "who": "Name", "line": "…" }]          // optional
   }],
-  "cards": [{ "id": "w3-c01", "word": "…", "type": "noun", "meaning": "…", "example": "…", "tr": "optional" }],
-  "quiz": [{ "q": "…", "options": ["a", "b", "c"], "answer": 1, "explain": "…" }],   // answer = index, starting at 0
+  "emoji": "🛒",
+  "cards": [{ "id": "w3-c01", "emoji": "🍎", "word": "apple", "meaning": "…", "example": "…", "tr": "optional" }],
+  "quiz": [
+    { "q": "…", "options": ["a", "b", "c"], "answer": 1, "explain": "…" },            // answer = index, starting at 0
+    { "q": "Listen. Tap the picture.", "say": "apple", "options": ["🍌", "🍎", "🍅"], "answer": 1 }   // listening question
+  ],
   "speak": [{ "id": "w3-s1", "text": "Sentence to read aloud", "note": "optional" }],
   "questions": [{
     "id": "w3-q1", "context": "Small talk", "q": "Question",
