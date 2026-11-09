@@ -851,6 +851,12 @@
     view.innerHTML = `<div class="card center"><span style="font-size:3rem">📡</span><h2>Can't load the lessons</h2><p class="sub">Check your internet, then try again.</p><button class="btn" onclick="location.reload()">Try again</button></div>`;
   });
   if ("serviceWorker" in navigator && (location.protocol === "https:" || location.hostname === "localhost")) {
-    navigator.serviceWorker.register("sw.js").catch(() => {});
+    // When a new version of the app is installed, reload once so it shows straight away.
+    const hadController = !!navigator.serviceWorker.controller;
+    let reloaded = false;
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (hadController && !reloaded) { reloaded = true; location.reload(); }
+    });
+    navigator.serviceWorker.register("sw.js", { updateViaCache: "none" }).then(r => r.update()).catch(() => {});
   }
 })();
